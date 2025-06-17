@@ -13,7 +13,7 @@
 </html> -->
 
 <!-- <!DOCTYPE html> -->
-<html ng-app="taskApp">
+<html>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -80,6 +80,18 @@
                 class="form-control"
                 ng-model="vm.newTask.dueDate"
               />
+            </div>
+
+            <div class="form-group">
+              <label for="categories">Categories</label>
+              <select
+                id="categories"
+                class="form-control"
+                ng-model="vm.newTask.categoryId"
+                ng-options="category.id as category.name for category in vm.categories"
+              >
+                <option value="" disabled>Select a category</option>
+              </select>
             </div>
 
             <button
@@ -194,9 +206,9 @@
         </div>
       </div>
     </div>
-    <script src="assets/legacy/js/app.js"></script>
+    <!-- <script src="assets/legacy/js/app.js"></script>
     <script src="assets/legacy/js/services/taskService.js"></script>
-    <script src="assets/legacy/js/controllers/taskController.js"></script>
+    <script src="assets/legacy/js/controllers/taskController.js"></script> -->
     <app-root></app-root>
   </body>
 </html>
